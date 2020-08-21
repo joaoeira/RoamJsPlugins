@@ -14,11 +14,11 @@
         max-width: var(--page-side-width);
     }
     .ghost{
-    opacity: .5;
-    background: #C8EBFB;
+        opacity: .5;
+        background: #C8EBFB;
     }
     .highlight{
-    background-color: #f9c7c8 !important;
+        background-color: #f9c7c8 !important;
     }
    ```
 6. Inside the :root css selector create a new variable `--page-side-width` and set it to desired size. (e.g `--page-side-width: 600px`)
