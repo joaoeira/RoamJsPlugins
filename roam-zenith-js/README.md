@@ -20,6 +20,10 @@
     .highlight{
         background-color: #f9c7c8 !important;
     }
+    .selected {
+        background-color: #FFEB3B !important;
+        z-index: 1 !important;
+    }
    ```
 6. Inside the :root css selector create a new variable `--page-side-width` and set it to desired size. (e.g `--page-side-width: 600px`)
 7. Refresh Page. Enjoy.
@@ -28,3 +32,4 @@
 * __Main Page Resize__: On Mouse Press, drag the right side of the page
 * __Side Page Resize__: Hold down Shift + Mouse Press, drag the right side of the Side Page
 * __Side Page Reorder__: On Mouse Press, drag from the center of page to desired reorder location.
+* __Multi Select__: Hold down Control + Mouse Press on the pages you want, then drag to desired reorder location. 

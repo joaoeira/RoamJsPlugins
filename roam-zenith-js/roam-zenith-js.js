@@ -207,12 +207,18 @@ window.addEventListener("keyup", (event) => {
                     documentEventHandlersObject[firstDiv.id] = removeHandler;
                     sideBarMutationObserver(el);
                     Sortable.create(el, {
+                        multiDrag: true,
+                        selectedClass: "selected",
+                        multiDragKey: "CTRL",
                         direction: "horizontal",
                         animation: 150,
                         swap: true,
                         swapClass: "highlight",
                         ghostClass: "ghost",
                         easing: "cubic-bezier(.41,1.61,0,-0.57)",
+                        scroll: true,
+                        scrollSensitivity: 30,
+                        scrollSpeed: 10,
                     });
                 },
             });
