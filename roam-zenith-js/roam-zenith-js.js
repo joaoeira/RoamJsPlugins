@@ -102,12 +102,12 @@ window.addEventListener("keyup", (event) => {
     //Import packages
     let packageGen = new Promise((resolve, reject) => {
         try {
-            var jQueryScript = document.createElement("script");
-            jQueryScript.setAttribute(
+            var sortableJS = document.createElement("script");
+            sortableJS.setAttribute(
                 "src",
                 "https://cdn.jsdelivr.net/npm/sortablejs@1.10.2/Sortable.min.js"
             );
-            document.head.appendChild(jQueryScript);
+            document.head.appendChild(sortableJS);
             setTimeout(() => resolve("loaded"), 500);
         } catch {
             reject(new Error("Error setting up Javascript Packages"));
