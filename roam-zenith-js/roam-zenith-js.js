@@ -14,13 +14,11 @@ For usage, please read the README.md
 var keyPress = false;
 window.addEventListener("keydown", (event) => {
     if (event.shiftKey) {
-        console.log("hi");
         keyPress = true;
     }
 });
 window.addEventListener("keyup", (event) => {
     if (keyPress) {
-        console.log("bi");
         keyPress = false;
     }
 });
