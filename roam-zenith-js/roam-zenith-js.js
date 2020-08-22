@@ -98,21 +98,20 @@ window.addEventListener("keyup", (event) => {
 
 (function () {
     //Import packages
-    let packageGen = new Promise((resolve, reject) => {
-        try {
-            var sortableJS = document.createElement("script");
-            sortableJS.setAttribute(
-                "src",
-                "https://cdn.jsdelivr.net/npm/sortablejs@1.10.2/Sortable.min.js"
-            );
-            document.head.appendChild(sortableJS);
-            setTimeout(() => resolve("loaded"), 500);
-        } catch {
-            reject(new Error("Error setting up Javascript Packages"));
-        }
-    });
+    const packageGen = async () => {
+        try{
+            const fetchedSortable = await fetch("https://cdn.jsdelivr.net/npm/sortablejs@1.10.2/Sortable.min.js");
+            const sortableSource = await fetchedSortable.text();
+            const sortableJS = document.createElement("script");
+        	  
+            sortableJS.setAttribute("type","text/javascript");
+            sortableJS.innerHTML = sortableSource;
+            
+            document.head.appendChild(sortableJS);}
+      	catch(error){reject(new Error("Error setting up Javascript Packages"));}
+    }
 
-    packageGen
+    packageGen()
         .then((result) => {
             //resize side pages
             function resize(element, typeWidth) {
